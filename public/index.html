@@ -15,7 +15,6 @@
 
 <body>
     <div class="container">
-      
             <div class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container">
                         <div class="collapse navbar-collapse navHeaderCollapse">
@@ -27,7 +26,6 @@
                         </div>
                     </div>
                 </div>
-      
         <!-- row 1 which has pics and button -->
         <div class="row portraits">
             <div class="col-md-1">
@@ -97,7 +95,7 @@
             <div class="row">
                 <div class="col-md-1">
                     <!--checkbox-->
-                    <input class= "regular-checkbox"id="checkBox" type="checkbox">
+                    <input class="regular-checkbox" id="checkBox" type="checkbox">
                 </div>
                 <div class="col-md-3">
                     <!--name-->
@@ -122,42 +120,37 @@
         <!-- end of posts div -->
         <hr>
         <div class="row">
+            <h1>Save your spot</h1>
             <div class="col-md-1">
                 <!-- empty -->
             </div>
             <div class="col-md-3">
                 <!-- name dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Olin</a></li>
+                        <li><a href="#">Sarai</a></li>
+                        <li><a href="#">Andrea</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-6">
                 <!-- question box -->
+                <div class="form-group">
+                    <label for="comment">Question:</label>
+                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                </div>
             </div>
             <div class="col-md-1">
                 <!-- get in line button -->
+                <button id="gil-btn" class="btn btn-primary" type="button">GET IN LINE</button>
             </div>
             <div class="col-md-1">
                 <!-- empty -->
             </div>
         </div>
-
-
-
-
-
-
-
-        <h1>waiting list</h1>
-        <hr>
-        <form>
-            name:<br>
-            <input type="text" class="firstname form-control"><br> question:
-            <br>
-            <input type="text" class="lastname form-control">
-        </form>
-        <button class="btn btn-primary submitbtn" type="button">Sign Up</button>
-
-
-
-
+  
         <script id="post-template" type="text/x-handlebars-template">
             <!-- begining of dummy post -->
             <div class="row">
@@ -185,9 +178,10 @@
             </div>
             <!-- end of dummy post-->
         </script>
-        <script src=" jquery\dist\jquery.js "></script>
+        <script src="jquery\dist\jquery.js "></script>
+        <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>
-        <script src='main.js'></script>
+        <script src="main.js"></script>
 </body>
 
 </html>

@@ -15,6 +15,7 @@
 
 <body>
     <div class="container">
+      
             <div class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container">
                         <div class="collapse navbar-collapse navHeaderCollapse">
@@ -26,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                
+      
         <!-- row 1 which has pics and button -->
         <div class="row portraits">
             <div class="col-md-1">
@@ -34,9 +35,9 @@
             </div>
             <div class="col-md-2">
                 <!-- picture and p/a -->
-                <img class='teacher-pic'src="assets/Brandon.png" alt="brandon pic" >
-                <img class='avail'src="assets/pause-button-dark-red-md.png" alt="brandon pic" >
-                <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >
+                <img class='teacher-pic' src="assets/Brandon.png" alt="brandon pic">
+                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
+                <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
             </div>
             <div class="col-md-1">
                 <button class="button">NEXT</button>
@@ -46,8 +47,8 @@
             </div>
             <div class="col-md-2">
                 <!-- picture and p/a -->
-                <img class='teacher-pic'src="assets/Hadas.png" alt="hadas pic" >
-                <img class='avail'src="assets/pause-button-dark-red-md.png" alt="brandon pic" >
+                <img class='teacher-pic' src="assets/Hadas.png" alt="hadas pic">
+                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
                 <!-- <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >-->
             </div>
             <div class="col-md-1">
@@ -58,9 +59,9 @@
             </div>
             <div class="col-md-2">
                 <!-- picture and p/a -->
-                <img class='teacher-pic'src="assets/Omer.png" alt="omer pic" >
-                <img class='avail'src="assets/pause-button-dark-red-md.png" alt="brandon pic" >
-                <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >
+                <img class='teacher-pic' src="assets/Omer.png" alt="omer pic">
+                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
+                <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
             </div>
             <div class="col-md-1">
                 <button class="button">NEXT</button>
@@ -71,19 +72,19 @@
             <div class="col-md-1">
                 <!-- empty -->
             </div>
-            <div id= "laptopLeft" class="col-md-3 laptop">
+            <div id="laptopLeft" class="col-md-3 laptop">
                 <!-- laptop -->
-                <img class='notebook'src="assets/Notebook.png" alt="notebook pic" >
+                <img class='notebook' src="assets/Notebook.png" alt="notebook pic">
             </div>
 
-            <div id= "laptopCenter" class="col-md-4 laptop">
+            <div id="laptopCenter" class="col-md-4 laptop">
                 <!-- laptop -->
-                <img class='notebook'src="assets/Notebook.png" alt="notebook pic" >
+                <img class='notebook' src="assets/Notebook.png" alt="notebook pic">
             </div>
 
-            <div id= "laptopRight" class="col-md-3 laptop">
+            <div id="laptopRight" class="col-md-3 laptop">
                 <!-- laptop -->
-                <img class='notebook'src="assets/Notebook.png" alt="notebook pic" >
+                <img class='notebook' src="assets/Notebook.png" alt="notebook pic">
             </div>
             <div class="col-md-1">
                 <!-- empty -->
@@ -155,6 +156,35 @@
         <button class="btn btn-primary submitbtn" type="button">Sign Up</button>
 
 
+
+
+        <script id="post-template" type="text/x-handlebars-template">
+            <!-- begining of dummy post -->
+            <div class="row">
+                <div class="col-md-1">
+                    <!--checkbox-->
+                    <input class="regular-checkbox" id="checkBox" type="checkbox">
+                </div>
+                <div class="col-md-3">
+                    <!--name-->
+                    <div class="corner rcorner1">{{name}}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="corner rcorner2">{{problem}}</div>
+
+                    <!--post-->
+                </div>
+                <div class="col-md-1">
+                    <div class="corner rcorner3">{{time}}</div>
+
+                    <!--time-->
+                </div>
+                <div class="col-md-1">
+                    <!--empty-->
+                </div>
+            </div>
+            <!-- end of dummy post-->
+        </script>
         <script src=" jquery\dist\jquery.js "></script>
         <script src="handlebars\dist\handlebars.js "></script>
         <script src='main.js'></script>

@@ -15,17 +15,17 @@
 
 <body>
     <div class="container">
-            <div class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="container">
-                        <div class="collapse navbar-collapse navHeaderCollapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Get inline</a></li>
-                                <li><a href="#">Waiting List</a></li>
-                                <li><a href="#">Consulation</a></li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="collapse navbar-collapse navHeaderCollapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Get inline</a></li>
+                        <li><a href="#">Waiting List</a></li>
+                        <li><a href="#">Consulation</a></li>
+                    </ul>
                 </div>
+            </div>
+        </div>
         <!-- row 1 which has pics and button -->
         <div class="row portraits">
             <div class="col-md-1">
@@ -120,7 +120,11 @@
         <!-- end of posts div -->
         <hr>
         <div class="row">
-            <h1>Save your spot</h1>
+            <div class="col-md-12">
+                <h1 id="saveur">Save your spot</h1>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-1">
                 <!-- empty -->
             </div>
@@ -150,7 +154,7 @@
                 <!-- empty -->
             </div>
         </div>
-  
+
         <script id="post-template" type="text/x-handlebars-template">
             <!-- begining of dummy post -->
             <div class="row">

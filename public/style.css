@@ -1,0 +1,65 @@
+body {
+    background-color: #6DB4D9;
+}
+
+.avail {
+    width: 50px; 
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:1;
+}
+
+.teacher-pic {
+    width: 150px; 
+    position: relative;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+.notebook {
+    width: 300px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.laptop {
+    box-sizing: border-box;
+}
+
+#laptopLeft{
+    margin-right: 70px;
+    margin-left: -80px;
+}
+
+#laptopRight{
+    margin-left: 30px; 
+}
+
+.portraits {
+    padding: 30px;
+}
+
+.button {
+    margin-top: 50px;
+    padding: 10px 20px;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 8px #6C7886;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 8px #3C3B41;
+    transform: translateY(3px);
+  }

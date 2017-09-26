@@ -1,6 +1,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var Student = require('./models/students.js')
+var Teacher = require('./models/teachers.js')
 
 mongoose.connect('mongodb://localhost/get-inlineDB', function(){
     console.log('DB is on!!!! XD ;)')

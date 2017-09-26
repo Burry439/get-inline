@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+
 var teacherSchema = new mongoose.Schema({
     firstName : String,
     lastName : String,

@@ -15,18 +15,17 @@
 
 <body>
     <div class="container">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="collapse navbar-collapse navHeaderCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Get inline</a></li>
-                        <li><a href="#">Waiting List</a></li>
-                        <li><a href="#">Consulation</a></li>
-                    </ul>
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="collapse navbar-collapse navHeaderCollapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#">Get inline</a></li>
+                                <li><a href="#">Waiting List</a></li>
+                                <li><a href="#">Consulation</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
         <!-- row 1 which has pics and button -->
         <div class="row portraits">
             <div class="col-md-1">
@@ -151,7 +150,34 @@
                 <!-- empty -->
             </div>
         </div>
+  
+        <script id="post-template" type="text/x-handlebars-template">
+            <!-- begining of dummy post -->
+            <div class="row">
+                <div class="col-md-1">
+                    <!--checkbox-->
+                    <input class="regular-checkbox" id="checkBox" type="checkbox">
+                </div>
+                <div class="col-md-3">
+                    <!--name-->
+                    <div class="corner rcorner1">{{name}}</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="corner rcorner2">{{problem}}</div>
 
+                    <!--post-->
+                </div>
+                <div class="col-md-1">
+                    <div class="corner rcorner3">{{time}}</div>
+
+                    <!--time-->
+                </div>
+                <div class="col-md-1">
+                    <!--empty-->
+                </div>
+            </div>
+            <!-- end of dummy post-->
+        </script>
         <script src="jquery\dist\jquery.js "></script>
         <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>

@@ -15,19 +15,23 @@
 
 <body>
     <div class="container">
+        
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Get inline</a></li>
-                        <li><a href="#">Waiting List</a></li>
-                        <li><a href="#">Consulation</a></li>
+                        <li><a href="#getinline" class="smoothScroll">Get inline </a></li>
+                        <li><a href="#line" class="smoothScroll">Waiting List</a></li>
+                        <li><a href="#teachers" class="smoothScroll">Consulation</a></li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
+        <a name="teachers"></a>
         <!-- row 1 which has pics and button -->
-        <div class="row portraits">
+        <div class="row portraits" >
             <div class="col-md-1">
                 <!-- empty -->
             </div>
@@ -70,30 +74,33 @@
             <div class="col-md-1">
                 <!-- empty -->
             </div>
-            <div id = "laptopLeft" class="col-md-3 laptop">
+            <div id="laptopLeft" class="col-md-3 laptop">
                 <!-- laptop -->
-                <img id="LaptopLeftImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 id="textBrandon"class= "textBrandon textMonitor">AMITAY</h2>
+                <img id="LaptopLeftImage" class='notebook' src="assets/Notebook.png" alt="notebook pic">
+                <h2 id="textBrandon" class="textBrandon textMonitor">AMITAY</h2>
             </div>
             <div id="laptopCenter" class="col-md-4 laptop">
                 <!-- laptop -->
-                <img id="LaptopCenterImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 class= "textHadas textMonitor">LANA</h2>
+                <img id="LaptopCenterImage" class='notebook' src="assets/Notebook.png" alt="notebook pic">
+                <h2 class="textHadas textMonitor">LANA</h2>
             </div>
             <div id="laptopRight" class="col-md-3 laptop">
                 <!-- laptop -->
-                <img id="LaptopRightImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 class= "textOmer textMonitor">SHY</h2>
+                <img id="LaptopRightImage" class='notebook' src="assets/Notebook.png" alt="notebook pic">
+                <h2 class="textOmer textMonitor">SHY</h2>
             </div>
             <div class="col-md-1">
                 <!-- empty -->
             </div>
+            <a name="line"></a>
         </div>
+        
         <hr>
+        
         <!-- posts div -->
-        <div id="_posts">
             <!-- begining of dummy post -->
-            <div class="row">
+            <div class="row">  
+                    
                 <div class="col-md-1">
                     <!--checkbox-->
                     <input class="regular-checkbox" id="checkBox" type="checkbox">
@@ -131,15 +138,17 @@
             </div>
             <div class="col-md-3">
                 <!-- name dropdown -->
+                
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Olin</a></li>
-                        <li><a href="#">Sarai</a></li>
-                        <li><a href="#">Andrea</a></li>
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <ul class="dropdown-menu ">
+                        <li class='student'>Olin</li>
+                        <li class='student'>Sarai</li>
+                        <li class='student'>Andrea</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="col-md-6">
                 <!-- question box -->
                 <div class="form-group">
@@ -149,13 +158,13 @@
             </div>
             <div class="col-md-1">
                 <!-- get in line button -->
-                <button id="gil-btn" class="btn btn-primary" type="button">GET IN LINE</button>
+                <button id="gil-btn" class="btn btn-primary get-inline" type="button">GET IN LINE</button>
             </div>
             <div class="col-md-1">
                 <!-- empty -->
             </div>
         </div>
-
+        <a name='getinline'></a>
         <script id="post-template" type="text/x-handlebars-template">
             <!-- begining of dummy post -->
             <div class="row">
@@ -168,25 +177,31 @@
                     <div class="corner rcorner1">{{name}}</div>
                 </div>
                 <div class="col-md-6">
-                    <div class="corner rcorner2">{{problem}}</div>
+                    <div class="corner rcorner2">{{text}}</div>
 
                     <!--post-->
                 </div>
                 <div class="col-md-1">
-                    <div class="corner rcorner3">{{time}}</div>
+                    <div class="corner rcorner3">11</div>
 
                     <!--time-->
                 </div>
                 <div class="col-md-1">
                     <!--empty-->
                 </div>
+                
             </div>
-            <!-- end of dummy post-->
         </script>
+        <!-- end of dummy post-->
         <script src="jquery\dist\jquery.js "></script>
+
         <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>
+        <script> src='socket.io\lib\socket.js'</script>     
+        <script type="text/javascript" src= "smoothscroll.js"></script>    
         <script src="main.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="socketscr.js"></script>
 </body>
 
 </html>

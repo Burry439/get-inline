@@ -125,3 +125,8 @@ body {
     box-shadow: 0 8px #3C3B41;
     transform: translateY(3px);
 }
+
+.student:hover {  
+  background-color: #5497CE
+
+}

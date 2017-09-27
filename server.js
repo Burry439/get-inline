@@ -12,16 +12,16 @@ mongoose.connect('mongodb://localhost/get-inlineDB', function(){
 })
 
 
+
+
+
+
 app.use(express.static('public'));
 app.use(express.static('assets'));
 app.use(express.static('node_modules'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-io.on('connection', function(client){
-    console.log('working')
-    client.emit('messages', {hello : 'hello'});
-})
 
 server.listen(8000, function(){
     console.log('listening on port 8000!!!XD')

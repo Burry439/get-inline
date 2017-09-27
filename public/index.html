@@ -15,21 +15,23 @@
 
 <body>
     <div class="container">
-       
+        
         
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="collapse navbar-collapse navHeaderCollapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Get inline</a></li>
-                        <li><a href="#">Waiting List</a></li>
-                        <li><a href="#">Consulation</a></li>
+                        <li><a href="#getinline" class="smoothScroll">Get inline </a></li>
+                        <li><a href="#line" class="smoothScroll">Waiting List</a></li>
+                        <li><a href="#teachers" class="smoothScroll">Consulation</a></li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
+        <a name="teachers"></a>
         <!-- row 1 which has pics and button -->
-        <div class="row portraits">
+        <div class="row portraits" >
             <div class="col-md-1">
                 <!-- empty -->
             </div>
@@ -90,12 +92,15 @@
             <div class="col-md-1">
                 <!-- empty -->
             </div>
+            <a name="line"></a>
         </div>
+        
         <hr>
+        
         <!-- posts div -->
-        <div id="_posts">
             <!-- begining of dummy post -->
-            <div class="row">
+            <div class="row">  
+                    
                 <div class="col-md-1">
                     <!--checkbox-->
                     <input class="regular-checkbox" id="checkBox" type="checkbox">
@@ -133,15 +138,18 @@
             </div>
             <div class="col-md-3">
                 <!-- name dropdown -->
+                
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Olin</a></li>
-                        <li><a href="#">Sarai</a></li>
-                        <li><a href="#">Andrea</a></li>
+                    
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" >SELECT YOUR NAME <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                    <ul class="dropdown-menu ">
+                        <li class='student'>Olin</li>
+                        <li class='student'>Sarai</li>
+                        <li class='student'>Andrea</li>
                     </ul>
                 </div>
             </div>
+            
             <div class="col-md-6">
                 <!-- question box -->
                 <div class="form-group">
@@ -151,13 +159,13 @@
             </div>
             <div class="col-md-1">
                 <!-- get in line button -->
-                <button id="gil-btn" class="btn btn-primary" type="button">GET IN LINE</button>
+                <button id="gil-btn" class="btn btn-primary get-inline" type="button">GET IN LINE</button>
             </div>
             <div class="col-md-1">
                 <!-- empty -->
             </div>
         </div>
-
+        <a name='getinline'></a>
         <script id="post-template" type="text/x-handlebars-template">
             <!-- begining of dummy post -->
             <div class="row">
@@ -182,19 +190,16 @@
                 <div class="col-md-1">
                     <!--empty-->
                 </div>
+                
             </div>
+            
             <!-- end of dummy post-->
         </script>
         <script src="jquery\dist\jquery.js "></script>
         <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>
-        <script> src='socket.io\lib\socket.js'</script>
-        <script>
-          var socket = io.connect('http://localhost:8000');
-socket.on('messages', function(data){
-    alert(data.hello)
-})
-        </script>
+        <script> src='socket.io\lib\socket.js'</script>     
+        <script type="text/javascript" src= "smoothscroll.js"></script>    
         <script src="main.js"></script>
         
 </body>

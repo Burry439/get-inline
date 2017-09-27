@@ -15,10 +15,8 @@
 
 <body>
     <div class="container">
-<<<<<<< HEAD
-        <h1>waiting list</h1>
-        <h3></h3>
-=======
+       
+        
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="collapse navbar-collapse navHeaderCollapse">
@@ -93,7 +91,6 @@
                 <!-- empty -->
             </div>
         </div>
->>>>>>> 37c0c224594b339f94e0d3ca3321cee5cb6f5c10
         <hr>
         <!-- posts div -->
         <div id="_posts">
@@ -191,7 +188,15 @@
         <script src="jquery\dist\jquery.js "></script>
         <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>
+        <script> src='socket.io\lib\socket.js'</script>
+        <script>
+          var socket = io.connect('http://localhost:8000');
+socket.on('messages', function(data){
+    alert(data.hello)
+})
+        </script>
         <script src="main.js"></script>
+        
 </body>
 
 </html>

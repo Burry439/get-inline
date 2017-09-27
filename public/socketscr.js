@@ -5,6 +5,8 @@ socket.on('connect', function (data) {
 });
 var source = $('#post-template').html();
 var template = Handlebars.compile(source);
+
+
 $('#gil-btn').on('click', function () {
     var studentName = $('.dropdown-toggle').text();
     var studentText = $('#comment').val();
@@ -12,9 +14,14 @@ $('#gil-btn').on('click', function () {
         name: studentName,
         text: studentText
     };
+    if(data.name == "SELECT YOUR NAME "  || data.text == ""){
+        alert('please fill out')
+        return
+    }
     var newHTML = template(data);
     $('#_posts').append(newHTML);
     socket.emit('add-post', data);
+    console.log(data.name)
 });
 
 socket.on('render-post', function (data) {

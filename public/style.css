@@ -94,3 +94,17 @@ body {
     width: 50px;
     height: 50px;
 }
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 8px #3C3B41;
+    transform: translateY(3px);
+}
+
+.student:hover {  
+  background-color: #5497CE
+
+}
+
+.line-post {
+    margin-bottom: 10px;
+}

@@ -1,10 +1,12 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var app = express();
+var server = require('http').createServer(app)
+var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-
 
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
@@ -46,7 +48,6 @@ mongoose.connect('mongodb://localhost/get-inlineDB', {useMongoClient: true,/* ot
 //     console.log('Hello');
 //     // client.emit()
 // });
-
 server.listen(8000, function () {
     console.log('listening on port 8000!!!XD');
 });

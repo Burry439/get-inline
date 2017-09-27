@@ -30,163 +30,172 @@
         <div class="row portraits">
             <div class="col-md-1">
                 <!-- empty -->
-            </div>
-            <div class="col-md-2">
-                <!-- picture and p/a -->
-                <img class='teacher-pic' src="assets/Brandon.png" alt="brandon pic">
-                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
-                <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
-            </div>
-            <div class="col-md-1">
-                <button class="button">NEXT</button>
-            </div>
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-            <div class="col-md-2">
-                <!-- picture and p/a -->
-                <img class='teacher-pic' src="assets/Hadas.png" alt="hadas pic">
-                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
-                <!-- <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >-->
-            </div>
-            <div class="col-md-1">
-                <button class="button">NEXT</button>
-            </div>
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-            <div class="col-md-2">
-                <!-- picture and p/a -->
-                <img class='teacher-pic' src="assets/Omer.png" alt="omer pic">
-                <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
-                <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
-            </div>
-            <div class="col-md-1">
-                <button class="button">NEXT</button>
-            </div>
-        </div>
-        <!-- end of row 1 -->
-        <div class="row">
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-            <div id = "laptopLeft" class="col-md-3 laptop">
-                <!-- laptop -->
-                <img id="LaptopLeftImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 id="textBrandon"class= "textBrandon textMonitor">AMITAY</h2>
-            </div>
-            <div id="laptopCenter" class="col-md-4 laptop">
-                <!-- laptop -->
-                <img id="LaptopCenterImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 class= "textHadas textMonitor">LANA</h2>
-            </div>
-            <div id="laptopRight" class="col-md-3 laptop">
-                <!-- laptop -->
-                <img id="LaptopRightImage"class='notebook'src="assets/Notebook.png" alt="notebook pic" >
-                <h2 class= "textOmer textMonitor">SHY</h2>
-            </div>
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-        </div>
-        <hr>
-        <!-- posts div -->
-        <div id="_posts">
-            <!-- begining of dummy post -->
-            <div class="row">
-                <div class="col-md-1">
-                    <!--checkbox-->
-                    <input class="regular-checkbox" id="checkBox" type="checkbox">
-                </div>
-                <div class="col-md-3">
-                    <!--name-->
-                    <div class="corner rcorner1">avi</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="corner rcorner2">express problem</div>
 
-                    <!--post-->
-                </div>
-                <div class="col-md-1">
-                    <div class="corner rcorner3">10:45</div>
+            </div>
+            <div id="containerBrandon">
+                <div class="col-md-2">
+                    <!-- picture and p/a -->
+                    <img class='teacher-pic' src="assets/Brandon.png" alt="brandon pic">
+                    <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
+                    <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
+                    <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                    
+                        <h2 id="textBrandon" class="textBrandon textMonitor">AMITAY</h2>
 
-                    <!--time-->
                 </div>
                 <div class="col-md-1">
-                    <!--empty-->
+
                 </div>
             </div>
-            <!-- end of dummy post-->
-        </div>
-        <!-- end of posts div -->
-        <hr>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="saveur">Save your spot</h1>
-            </div>
-        </div>
-        <div class="row">
+
             <div class="col-md-1">
                 <!-- empty -->
             </div>
-            <div class="col-md-3">
-                <!-- name dropdown -->
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME<span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Olin</a></li>
-                        <li><a href="#">Sarai</a></li>
-                        <li><a href="#">Andrea</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- question box -->
-                <div class="form-group">
-                    <label for="comment">Question:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <!-- get in line button -->
-                <button id="gil-btn" class="btn btn-primary" type="button">GET IN LINE</button>
-            </div>
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-        </div>
 
-        <script id="post-template" type="text/x-handlebars-template">
-            <!-- begining of dummy post -->
-            <div class="row">
-                <div class="col-md-1">
-                    <!--checkbox-->
-                    <input class="regular-checkbox" id="checkBox" type="checkbox">
-                </div>
-                <div class="col-md-3">
-                    <!--name-->
-                    <div class="corner rcorner1">{{name}}</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="corner rcorner2">{{problem}}</div>
+            <div id="containerHadas">
+                <div class="col-md-2">
+                    <!-- picture and p/a -->
+                    <img class='teacher-pic' src="assets/Hadas.png" alt="hadas pic">
+                    <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
+                    <!-- <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >-->
+                    <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                    
+                        <h2 class="textHadas textMonitor">LANA</h2>
 
-                    <!--post-->
                 </div>
                 <div class="col-md-1">
-                    <div class="corner rcorner3">{{time}}</div>
 
-                    <!--time-->
-                </div>
-                <div class="col-md-1">
-                    <!--empty-->
                 </div>
             </div>
-            <!-- end of dummy post-->
-        </script>
-        <script src="jquery\dist\jquery.js "></script>
-        <script src="bootstrap/dist/js/bootstrap.js"></script>
-        <script src="handlebars\dist\handlebars.js "></script>
-        <script src="main.js"></script>
+
+                <div class="col-md-1">
+                    <!-- empty -->
+                </div>
+
+                <div id="containerOmer"></div>
+                <div class="col-md-2">
+                    <!-- picture and p/a -->
+                    <img class='teacher-pic' src="assets/Omer.png" alt="omer pic">
+                    <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
+                    <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
+                    <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>                    
+                        <h2 class="textOmer textMonitor">SHY</h2>
+                    </div>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+            </div>
+
+            <!-- end of row 1 -->
+            <div class="row list">
+                <div class="col-md-1">
+                    <!-- empty -->
+
+
+
+                    <div class="col-md-1">
+                        <!-- empty -->
+                    </div>
+                </div>
+
+                <!-- posts div -->
+                <div id="_posts">
+                    <!-- begining of dummy post -->
+                    <div class="row">
+                        <div class="col-md-1">
+                            <!--checkbox-->
+                            <!--<input class="regular-checkbox" id="checkBox" type="checkbox">-->
+                        </div>
+                        <div class="col-md-3">
+                            <!--name-->
+                            <div class="corner rcorner1">avi</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="corner rcorner2">express problem</div>
+
+                            <!--post-->
+                        </div>
+                        <div class="col-md-1">
+                            <div class="corner rcorner3">10:45</div>
+
+                            <!--time-->
+                        </div>
+                        <div class="col-md-1">
+                            <!--empty-->
+                        </div>
+                    </div>
+                    <!-- end of dummy post-->
+                </div>
+                <!-- end of posts div -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="saveur">Save your spot</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
+                        <!-- empty -->
+                    </div>
+                    <div class="col-md-3">
+                        <!-- name dropdown -->
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME<span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Olin</a></li>
+                                <li><a href="#">Sarai</a></li>
+                                <li><a href="#">Andrea</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- question box -->
+                        <div class="form-group">
+                            <label for="comment">Question:</label>
+                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <!-- get in line button -->
+                        <button id="gil-btn" class="btn btn-primary" type="button">GET IN LINE</button>
+                    </div>
+                    <div class="col-md-1">
+                        <!-- empty -->
+                    </div>
+                </div>
+
+                <script id="post-template" type="text/x-handlebars-template">
+                    <!-- begining of dummy post -->
+                    <div class="row">
+                        <div class="col-md-1">
+                            <!--checkbox-->
+                            <input class="regular-checkbox" id="checkBox" type="checkbox">
+                        </div>
+                        <div class="col-md-3">
+                            <!--name-->
+                            <div class="corner rcorner1">{{name}}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="corner rcorner2">{{problem}}</div>
+
+                            <!--post-->
+                        </div>
+                        <div class="col-md-1">
+                            <div class="corner rcorner3">{{time}}</div>
+
+                            <!--time-->
+                        </div>
+                        <div class="col-md-1">
+                            <!--empty-->
+                        </div>
+                    </div>
+                    <!-- end of dummy post-->
+                </script>
+                <script src="jquery\dist\jquery.js "></script>
+                <script src="bootstrap/dist/js/bootstrap.js"></script>
+                <script src="handlebars\dist\handlebars.js "></script>
+                <script src="main.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 body {
-    background-color: #6DB4D9;
+    background-color: #f1dfc4;
 }
 
 #saveur {
@@ -10,82 +10,61 @@ body {
 .avail {
     width: 50px;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 25px;
     z-index: 1;
 }
 
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 16px;
+    line-height: 1.42;
+    border-radius: 15px;
+    background-color: greenyellow !important;
+    border: none;
+    position: absolute;
+    top: 290px;
+    left: 85px;
+    z-index: 1;
+    cursor: pointer;
+}
+
 .teacher-pic {
-    width: 150px;
+    width: 300px;
     position: relative;
     top: 0;
-    left: 0;
+    left: -65px;
     z-index: 0;
 }
 
-.notebook {
-    width: 300px;
+#textBrandon {
+    z-index: 1;
+    position: absolute;
+    left: 46px;
+    top: 240px;
 }
 
-
-/* #laptopRight{
-    margin-left: 30px; 
-    z-index:0;
-    position: relative;
-} */
-
-#LaptopRightImage {
+.textHadas {
+    z-index: 1;
     position: absolute;
-    left: 50;
-    top: 0;
+    left: 63px;
+    top: 240px;
 }
 
 .textOmer {
     z-index: 1;
     position: absolute;
-    top: 40px;
-    left: 175;
+    top: 240px;
+    left: 70;
     width: 100%;
 }
 
-
-/* #laptopCenter{
-    margin-left: 30px; 
-    z-index:0;
-    position: relative;
-} */
-
-#LaptopCenterImage {
-    position: relative;
-    left: 30px;
-    top: 0px;
-}
-
-.textHadas {
-    z-index: 100;
-    position: absolute;
-    left: 160px;
-    top: 40px;
-}
-
-
-/* #laptopLeft {
-    margin-right: 70px;
-    margin-left: -80px;
-    position: relative;
-  } */
-
-#LaptopLeftImage {
-    position: absolute;
-    left: -50;
-    top: 0;
-}
-
-#textBrandon {
-    z-index: 100;
-    position: absolute;
-    left: 50px;
-    top: 40px;
+.container{
+    width: 100%;
+    padding-left: 50px;
 }
 
 .textMonitor {
@@ -102,26 +81,16 @@ body {
     margin-bottom: 30px;
 }
 
-.button {
+.line {
+    border-top: 15px solid #C2C0B3;
+}
+
+.list {
     margin-top: 50px;
-    padding: 10px 20px;
-    font-size: 12px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 8px #6C7886;
+    margin-bottom: 30px;
 }
 
-.button:hover {
-    background-color: #3e8e41
-}
-
-.button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 8px #3C3B41;
-    transform: translateY(3px);
+.regular-checkbox {
+    width: 50px;
+    height: 50px;
 }

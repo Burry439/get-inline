@@ -96,14 +96,15 @@
             </div>
             <a name="line"></a>
         </div>
-
         <hr>
+
         <!-- posts div -->
         <div id="_posts">
             <!-- begining of dummy post -->
             <!-- end of dummy post-->
         </div>
         <!-- end of posts div -->
+
         <hr>
         <div class="row">
             <div class="col-md-12">
@@ -142,35 +143,33 @@
                 <!-- empty -->
             </div>
         </div>
-        <a name='getinline'></a>
+        <!-- beg of handlebars -->
         <script id="post-template" type="text/x-handlebars-template">
-            <!-- begining of dummy post -->
-            <div class="row">
-                <div class="col-md-1">
-                    <!--checkbox-->
-                    <input class="regular-checkbox" id="checkBox" type="checkbox">
+            <div class="line-post">
+                <div class="row">
+                    <div class="col-md-1">
+                        <!--checkbox-->
+                        <input class="regular-checkbox" id="checkBox" type="checkbox">
+                    </div>
+                    <div class="col-md-3">
+                        <!--name-->
+                        <div class="corner rcorner1">{{name}}</div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="corner rcorner2">{{text}}</div>
+                        <!--post-->
+                    </div>
+                    <div class="col-md-1">
+                        <div class="corner rcorner3">11</div>
+                        <!--time-->
+                    </div>
+                    <div class="col-md-1">
+                        <!--empty-->
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <!--name-->
-                    <div class="corner rcorner1">{{name}}</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="corner rcorner2">{{text}}</div>
-
-                    <!--post-->
-                </div>
-                <div class="col-md-1">
-                    <div class="corner rcorner3">11</div>
-
-                    <!--time-->
-                </div>
-                <div class="col-md-1">
-                    <!--empty-->
-                </div>
-
             </div>
         </script>
-        <!-- end of dummy post-->
+        <!-- end of handlebars -->
         <script src="jquery\dist\jquery.js "></script>
         <script src="bootstrap/dist/js/bootstrap.js"></script>
         <script src="handlebars\dist\handlebars.js "></script>

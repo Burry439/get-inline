@@ -61,6 +61,19 @@ body {
     left: 70;
     width: 100%;
 }
+@keyframes flash {
+    from, 50%, to {
+      opacity: 1;
+    }
+  
+    25%, 75% {
+      opacity: 0;
+    }
+  }
+  
+  .flash {
+    animation-name: flash;
+  }
 
 .container{
     width: 100%;
@@ -107,4 +120,86 @@ body {
 
 .line-post {
     margin-bottom: 10px;
+}
+
+h1 {
+	font-family: "Patrick Hand";
+	font-size: 30px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+.buttonText {
+	font-family: "Patrick Hand";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 26.4px;
+    color: black;
+}
+
+.form-control {
+	font-family: "Patrick Hand";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 26.4px;
+    color: black;
+}
+
+.btn {
+	font-family: "Patrick Hand";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 26.4px;
+    color: black;
+}
+
+.corner {
+	font-family: "Patrick Hand";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 26.4px;
+    color: black;
+}
+
+.smoothscroll {
+	font-family: "Patrick Hand";
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 26.4px;
+    color: black;
+}
+
+.gil-btn {
+    margin-top:20px;
+    position: relative;
+}
+
+.sign-in {
+	background-color: none;
+}
+
+.btn-primary {
+    background-color: #afcd45;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #778A31;
+    border: none;
+}
+
+.btn-primary:focus {
+    background-color: #778A31 !important;
+    border: none;
 }

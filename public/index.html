@@ -25,7 +25,7 @@
                         <li><a href="#line" class="smoothScroll">Waiting List</a></li>
                         <li><a href="#teachers" class="smoothScroll">Consulation</a></li>
                         <img style="/* -webkit-user-select: none; *//* background-position: 0px 0px, 10px 10px; *//* background-size: 20px 20px; *//* background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%); */cursor: zoom-in;"
-                            src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1076/s300/logo-300px-green-01.png"
+                            src="assets/logo.png"
                             width="50" height="50">
                     </ul>
                 </div>
@@ -126,7 +126,7 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <h1 id="saveur">Save your spot</h1>
+                <h1 id="saveur"></h1>
             </div>
         </div>
         <div class="row">
@@ -144,18 +144,21 @@
                         <li class='student'>Andrea</li>
                     </ul>
                 </div>
+                    <!-- question box -->
+                <div class="form-group">
+                        <label for="comment"></label>
+                        <textarea class="form-control" placeholder= "Question" rows="5" id="comment"></textarea>
+                    </div>
+                    <!-- get in line button -->
+                <button id="gil-btn" class="btn btn-primary get-inline" type="button">GET IN LINE</button>
+                </div>
             </div>
 
             <div class="col-md-6">
-                <!-- question box -->
-                <div class="form-group">
-                    <label for="comment">Question:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
-                </div>
+                
             </div>
             <div class="col-md-1">
-                <!-- get in line button -->
-                <button id="gil-btn" class="btn btn-primary get-inline" type="button">GET IN LINE</button>
+                
             </div>
             <div class="col-md-1">
                 <!-- empty -->
@@ -168,8 +171,9 @@
                 <div class="row">
                     <div class="col-md-1">
                         <!--checkbox-->
-                        <input class="regular-checkbox" id="checkBox" type="checkbox">
+                        <!-- <input class="regular-checkbox" id="checkBox" type="checkbox"> -->
                     </div>
+                    <div class="containerList">
                     <div class="col-md-3">
                         <!--name-->
                         <div class="corner rcorner1">{{name}}</div>
@@ -182,6 +186,7 @@
                         <div class="corner rcorner3">{{time}}</div>
                         <!--time-->
                     </div>
+                </div>
                     <div class="col-md-1">
                         <!--empty-->
                     </div>

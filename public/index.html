@@ -25,7 +25,7 @@
                         <li><a href="#line" class="smoothScroll">Waiting List</a></li>
                         <li><a href="#teachers" class="smoothScroll">Consulation</a></li>
                         <img style="/* -webkit-user-select: none; *//* background-position: 0px 0px, 10px 10px; *//* background-size: 20px 20px; *//* background-image:linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%); */cursor: zoom-in;"
-                            src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/1076/s300/logo-300px-green-01.png"
+                            src="assets/logo.png"
                             width="50" height="50">
                     </ul>
                 </div>
@@ -68,13 +68,13 @@
                     <img class='teacher-pic' src="assets/Hadas.png" alt="hadas pic">
                     <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
                     <!-- <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >-->
+
                     <div class="next-btn" id="hadas-btn" data-teacher="Hadas">
                         <a class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
                     </div>
 
 
                     <h2 class="textHadas textMonitor"></h2>
-
                 </div>
                 <div class="col-md-1">
 
@@ -95,6 +95,7 @@
                     <a class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
                 </div>
                 <h2 class="textOmer textMonitor"></h2>
+
             </div>
         </div>
         <div class="col-md-1">
@@ -124,69 +125,74 @@
         <!-- end of posts div -->
 
         <hr>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="saveur">Save your spot</h1>
+        <section class="sign-in">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 id="saveur"></h1>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-            <div class="col-md-3">
-                <!-- name dropdown -->
+            <div class="row">
+                <div class="col-md-1">
+                    <!-- empty -->
+                </div>
+                <div class="col-md-3">
 
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME <i class="fa fa-caret-down" aria-hidden="true"></i></button>
-                    <ul class="dropdown-menu ">
-                        <li class='student'>Olin</li>
-                        <li class='student'>Sarai</li>
-                        <li class='student'>Andrea</li>
-                    </ul>
                 </div>
-            </div>
 
-            <div class="col-md-6">
-                <!-- question box -->
-                <div class="form-group">
-                    <label for="comment">Question:</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                <div class="col-md-6">
+                    <!-- name dropdown -->
+
+                    <div class="dropdown">
+                        <button class="buttonText btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">SELECT YOUR NAME <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                        <ul class="dropdown-menu ">
+                            <li class='student'>Olin</li>
+                            <li class='student'>Sarai</li>
+                            <li class='student'>Andrea</li>
+                        </ul>
+                    </div>
+                    <!-- question box -->
+                    <div class="form-group"></div>
+                        <label class="buttonText" for="comment"></label>
+                        <textarea class="form-control" placeholder="Describe your question" rows="5" id="comment"></textarea>
+                        <button id="gil-btn" class="gil-btn buttonText btn btn-primary get-inline" type="button">GET IN LINE</button>
+
+                    </div>
+                    <div class="col-md-1">
+                            <!-- get in line button -->
+                            
+                        </div>
+                </div>
+                
+                <div class="col-md-1">
+                    <!-- empty -->
                 </div>
             </div>
-            <div class="col-md-1">
-                <!-- get in line button -->
-                <button id="gil-btn" class="btn btn-primary get-inline" type="button">GET IN LINE</button>
-            </div>
-            <div class="col-md-1">
-                <!-- empty -->
-            </div>
-            <a name="getinline"></a>
-        </div>
-        <!-- beg of handlebars -->
-        <script id="post-template" type="text/x-handlebars-template">
-            <div class="line-post">
-                <div class="row">
-                    <div class="col-md-1">
-                        <!--checkbox-->
-                        <input class="regular-checkbox" id="checkBox" type="checkbox">
-                    </div>
-                    <div class="col-md-3">
-                        <!--name-->
-                        <div class="corner rcorner1">{{name}}</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="corner rcorner2">{{text}}</div>
-                        <!--post-->
-                    </div>
-                    <div class="col-md-1">
-                        <div class="corner rcorner3">{{time}}</div>
-                        <!--time-->
-                    </div>
-                    <div class="col-md-1">
-                        <!--empty-->
+            <!-- beg of handlebars -->
+            <script id="post-template" type="text/x-handlebars-template">
+                <div class="line-post">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <!--checkbox-->
+                            <input class="regular-checkbox" id="checkBox" type="checkbox">
+                        </div>
+                        <div class="col-md-3">
+                            <!--name-->
+                            <div class="corner rcorner1">{{name}}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="corner rcorner2">{{text}}</div>
+                            <!--post-->
+                        </div>
+                        <div class="col-md-1">
+                            <div class="corner rcorner3">11</div>
+                            <!--time-->
+                        </div>
+                        <div class="col-md-1">
+                            <!--empty-->
+                        </div>
                     </div>
                 </div>
-            </div>
+        </section>
         </script>
         <!-- end of handlebars -->
         <script src="jquery\dist\jquery.js "></script>

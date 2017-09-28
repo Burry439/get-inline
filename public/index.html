@@ -45,10 +45,12 @@
                     <img class='teacher-pic' src="assets/Brandon.png" alt="brandon pic">
                     <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
                     <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
-                    <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                    <div class="next-btn" id="brandon-btn" data-teacher="Brandon">
+                        <a class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                    </div>
 
-                    <h2 id="textBrandon" class="textBrandon textMonitor flash {
-                            ">AMITAY</h2>
+
+                    <h2 id="textBrandon" class="textBrandon textMonitor"></h2>
 
                 </div>
                 <div class="col-md-1">
@@ -66,10 +68,13 @@
                     <img class='teacher-pic' src="assets/Hadas.png" alt="hadas pic">
                     <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
                     <!-- <img class='avail'src="assets/available-button-green-md.png" alt="brandon pic" >-->
-                    <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
 
-                    <h2 class="textHadas textMonitor">LANA</h2>
+                    <div class="next-btn" id="hadas-btn" data-teacher="Hadas">
+                        <a class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                    </div>
 
+
+                    <h2 class="textHadas textMonitor"></h2>
                 </div>
                 <div class="col-md-1">
 
@@ -86,8 +91,11 @@
                 <img class='teacher-pic' src="assets/Omer.png" alt="omer pic">
                 <img class='avail' src="assets/pause-button-dark-red-md.png" alt="brandon pic">
                 <img class='avail' src="assets/available-button-green-md.png" alt="brandon pic">
-                <a href="#" class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
-                <h2 class="textOmer textMonitor">SHY</h2>
+                <div class="next-btn" id="omer-btn" data-teacher="Omer">
+                    <a class="btn btn-default btn-circle"><i class="fa fa-step-forward"></i></a>
+                </div>
+                <h2 class="textOmer textMonitor"></h2>
+
             </div>
         </div>
         <div class="col-md-1">
@@ -108,7 +116,9 @@
         </div>
 
         <!-- posts div -->
+        <a name='line'></a>
         <div id="_posts">
+            
             <!-- begining of dummy post -->
             <!-- end of dummy post-->
         </div>
@@ -145,6 +155,7 @@
                         <label class="buttonText" for="comment"></label>
                         <textarea class="form-control" placeholder="Describe your question" rows="5" id="comment"></textarea>
                         <button id="gil-btn" class="gil-btn buttonText btn btn-primary get-inline" type="button">GET IN LINE</button>
+
                     </div>
                     <div class="col-md-1">
                             <!-- get in line button -->

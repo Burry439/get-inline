@@ -10,11 +10,14 @@ var template = Handlebars.compile(source);
 
 
 $('#gil-btn').on('click', function () {
+    var dt = new Date();
+    var time = dt.getHours() + ":" + dt.getMinutes()
     var studentName = $('.dropdown-toggle').text();
     var studentText = $('#comment').val();
     var data = {
         name: studentName,
-        text: studentText
+        text: studentText,
+        time : time.toString()
     };
     if (data.name == "SELECT YOUR NAME " || data.text == "") {
         alert('please fill out');

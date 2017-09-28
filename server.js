@@ -82,10 +82,12 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
             console.log(data);
             client.broadcast.emit('render-post', data);
         });
-        client.on('next-btn', function (teacherName) {
+        client.on('next-btn', function (dataNext) {
+            var teacherName = dataNext.teacherName;
+            var isEmpty = dataNext.isEmpty;
             Post.find({}, function (err, posts) {
                 if (err) { console.log(err); }
-                if (posts.length) {
+                if (isEmpty) {
                     var postToRemove = posts[0];
                     // console.log(postToRemove);
                     // var tempPostToRemove = postToRemove 
@@ -107,18 +109,27 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
                         postToRemove: postToRemove,
                         teacherName: teacherName
                     };
-                    console.log(JSON.stringify(data) + 'popopopopo');
+                    // console.log(JSON.stringify(data) + 'popopopopo');
                     client.emit('addToTeacher', data);
                     client.broadcast.emit('addToTeacher', data);
                     // console.log(posts);
                 }
-                // else {
-                //     var teacher = {
-                //         postToRemove: null,
-                //         teacherName: teacherName
-                //     };
-                //     client.emit(('addToTeacher', teacher));
-                // }
+                else if(!isEmpty) {
+                    CurrentSe.find({}, function(err, session) {
+                        var thissession = session[0];
+                        thissession[teacherName] = "";
+                        thissession.save();
+                    });
+                    var data2 = {
+                        postToRemove: {
+                            name: ""
+                        },
+                        teacherName: teacherName
+                    };
+                    console.log(JSON.stringify(data2) + 'popopopopo');
+                    client.emit('addToTeacher', data2);
+                    client.broadcast.emit('addToTeacher', data2);
+                }
             });
         });
     });

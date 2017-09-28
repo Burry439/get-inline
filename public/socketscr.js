@@ -17,7 +17,7 @@ $('#gil-btn').on('click', function () {
     var data = {
         name: studentName,
         text: studentText,
-        time : time.toString()
+        time: time.toString()
     };
     if (data.name == "SELECT YOUR NAME " || data.text == "") {
         alert('please fill out');
@@ -32,7 +32,20 @@ $('#gil-btn').on('click', function () {
 $('.next-btn').on('click', function () {
     var teacherName = $(this).data('teacher');
     console.log(teacherName);
-    socket.emit('next-btn', teacherName);
+    var data;
+    if ($('#_posts').children().length == 0) {
+        data = {
+            teacherName: teacherName,
+            isEmpty: false
+        };
+    } else {
+        data = {
+            teacherName: teacherName,
+            isEmpty: true
+        };
+    }
+
+    socket.emit('next-btn', data);
 });
 
 socket.on('render-after-next', function () {

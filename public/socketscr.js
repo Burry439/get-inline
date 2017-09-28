@@ -19,9 +19,12 @@ $('#gil-btn').on('click', function () {
         text: studentText,
         time: time.toString()
     };
-    if (data.name == "SELECT YOUR NAME " || data.text == "") {
-        alert('please fill out');
+    if (data.name == "SELECT YOUR NAME ") {
+        alert('please select a name');
         return;
+    }else if (data.text == ""){
+      alert('please ask a question')
+     return;
     }
     var newHTML = template(data);
     $('#_posts').append(newHTML);

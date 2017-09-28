@@ -29,7 +29,8 @@ mongoose.connect('mongodb://localhost/get-inlineDB', {useMongoClient: true,/* ot
         client.on("add-post", function(data) {
             var name = data.name;
             var text = data.text;
-            var post = new Post({name: name, text: text});
+            var time = data.time;
+            var post = new Post({name: name, text: text, time : time});
             post.save();
             // client.emit('render-post', data);
             console.log(data);

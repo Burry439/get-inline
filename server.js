@@ -23,10 +23,18 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
             if (err) { console.log(err); }
             // console.log(posts);
             client.emit('render-posts-all', posts);
-            // CurrentSe.find({}, function (err, sessions) {
-            //     sessions[0].
-            // })
-            // client.emit('addToTeacher', session);
+            CurrentSe.find({}, function (err, sessions) {
+                for(var key in sessions[0]) {
+                    var data = {
+                        postToRemove : {
+                            name: sessions[0].key,
+                        },
+                        teacherName: key
+                    };
+                    console.log(data);
+                    client.emit('addToTeacher', data);
+                }
+            });
             // client.broadcast.emit('addToTeacher', session);
         });
         // client.on('event', function(data){});
@@ -58,11 +66,11 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
                             client.emit('render-posts-all', posts);
                         });
                     });
-                    // var session = new CurrentSe(
-                    //     {
-                    //         studentName: postToRemove,
-                    //         teacherName: teacherName
-                    //     });
+                    CurrentSe.findOne({}, function(err, session) {
+                        var thissession = session[0];
+                        thissession[teacherName] = postToRemove.name;
+                        thissession.save();
+                    });
                     var data = {
                         postToRemove: postToRemove,
                         teacherName: teacherName
@@ -83,6 +91,14 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
         });
     });
 });
+
+// var session = new CurrentSe({
+//     Brandon: null,
+//     Hadas: null,
+//     Omer: null
+// });
+
+// session.save();
 
 server.listen(8000, function () {
     console.log('listening on port 8000!!!XD');

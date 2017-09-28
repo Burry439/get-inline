@@ -1,14 +1,10 @@
 var mongoose = require('mongoose');
 
-var teacherSession = new mongoose.Schema({
-    teacherName: String,
-    studentName: String
-});
 
 var currentSeSchema = new mongoose.Schema({
-    brandon: teacherSession,
-    hadas: teacherSession,
-    omer: teacherSession
+    Brandon: String,
+    Hadas: String,
+    Omer: String
 });
 
 var CurrentSe = mongoose.model('Session', currentSeSchema);

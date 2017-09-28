@@ -61,23 +61,6 @@ socket.on('addToTeacher', function (data) {
     var teacherName = data.teacherName;
     console.log(teacherName + 'lllllllllllllllllllll');
     var teacherLaptop = $(".text" + data.teacherName);
-    // var brandonLaptop = $('.textBrandon');
-    // var hadasLaptop = $('.textHadas');
-    // var omerLaptop = $('.textOmer');
-    // switch (teacherName) {
-    //     case 'Brandon':
-    //         brandonLaptop.empty();
-    //         brandonLaptop.append(studentToAdd);
-    //         break;
-    //     case 'Hadas':
-    //         hadasLaptop.empty()
-    //         hadasLaptop.append(studentToAdd);
-    //         break;
-    //     case 'Omer':
-    //         omerLaptop.empty();
-    //         omerLaptop.append(studentToAdd);
-    //         break;
-    // }
     teacherLaptop.empty();
     teacherLaptop.append(studentToAdd);
 });

@@ -24,16 +24,45 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
             // console.log(posts);
             client.emit('render-posts-all', posts);
             CurrentSe.find({}, function (err, sessions) {
-                for(var key in sessions[0]) {
-                    var data = {
-                        postToRemove : {
-                            name: sessions[0].key,
-                        },
-                        teacherName: key
-                    };
-                    console.log(data);
-                    client.emit('addToTeacher', data);
-                }
+            //     for(var key in sessions[0]) {
+                    // var data = {
+                    //     postToRemove : {
+                    //         name: sessions[0].key,
+                    //     },
+                    //     teacherName: key
+                    // };
+            //         console.log(data);
+            //         client.emit('addToTeacher', data);
+            //     }
+            var currentTeacher, data;
+            var thissession = sessions[0];
+            currentTeacher = "Brandon";
+            var brandonStudent = thissession[currentTeacher];
+            data = {
+                postToRemove : {
+                    name: brandonStudent,
+                },
+                teacherName: currentTeacher
+            };
+            client.emit('addToTeacher', data);
+            currentTeacher = "Hadas";
+            var hadasStudent = thissession[currentTeacher];
+            data = {
+                postToRemove : {
+                    name: hadasStudent,
+                },
+                teacherName: currentTeacher
+            };
+            client.emit('addToTeacher', data);
+            currentTeacher = "Omer";
+            var omerStudent = thissession[currentTeacher];
+            data = {
+                postToRemove : {
+                    name: omerStudent,
+                },
+                teacherName: currentTeacher
+            };
+            client.emit('addToTeacher', data);
             });
             // client.broadcast.emit('addToTeacher', session);
         });
@@ -66,7 +95,7 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
                             client.emit('render-posts-all', posts);
                         });
                     });
-                    CurrentSe.findOne({}, function(err, session) {
+                    CurrentSe.find({}, function(err, session) {
                         var thissession = session[0];
                         thissession[teacherName] = postToRemove.name;
                         thissession.save();

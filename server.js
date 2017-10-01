@@ -16,7 +16,7 @@ var Teacher = require('./models/teachers.js');
 var Post = require('./models/post.js');
 var CurrentSe = require('./models/currentse.js');
 // var mongoconnection =  'mongodb://<olinsoffer>:<tigerXX33>@ds157964.mlab.com:57964/get-inlinedb';
-mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { useMongoClient: true,/* other options */ }, function () {
+mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/beers', { useMongoClient: true,/* other options */ }, function () {
     console.log('DB is on!!!! XD ;)');
     io.on('connection', function (client) {
         Post.find({}, function (err, posts) {
@@ -24,45 +24,45 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
             // console.log(posts);
             client.emit('render-posts-all', posts);
             CurrentSe.find({}, function (err, sessions) {
-            //     for(var key in sessions[0]) {
-                    // var data = {
-                    //     postToRemove : {
-                    //         name: sessions[0].key,
-                    //     },
-                    //     teacherName: key
-                    // };
-            //         console.log(data);
-            //         client.emit('addToTeacher', data);
-            //     }
-            var currentTeacher, data;
-            var thissession = sessions[0];
-            currentTeacher = "Brandon";
-            var brandonStudent = thissession[currentTeacher];
-            data = {
-                postToRemove : {
-                    name: brandonStudent,
-                },
-                teacherName: currentTeacher
-            };
-            client.emit('addToTeacher', data);
-            currentTeacher = "Hadas";
-            var hadasStudent = thissession[currentTeacher];
-            data = {
-                postToRemove : {
-                    name: hadasStudent,
-                },
-                teacherName: currentTeacher
-            };
-            client.emit('addToTeacher', data);
-            currentTeacher = "Omer";
-            var omerStudent = thissession[currentTeacher];
-            data = {
-                postToRemove : {
-                    name: omerStudent,
-                },
-                teacherName: currentTeacher
-            };
-            client.emit('addToTeacher', data);
+                //     for(var key in sessions[0]) {
+                // var data = {
+                //     postToRemove : {
+                //         name: sessions[0].key,
+                //     },
+                //     teacherName: key
+                // };
+                //         console.log(data);
+                //         client.emit('addToTeacher', data);
+                //     }
+                var currentTeacher, data;
+                var thissession = sessions[0];
+                currentTeacher = "Brandon";
+                var brandonStudent = thissession[currentTeacher];
+                data = {
+                    postToRemove: {
+                        name: brandonStudent,
+                    },
+                    teacherName: currentTeacher
+                };
+                client.emit('addToTeacher', data);
+                currentTeacher = "Hadas";
+                var hadasStudent = thissession[currentTeacher];
+                data = {
+                    postToRemove: {
+                        name: hadasStudent,
+                    },
+                    teacherName: currentTeacher
+                };
+                client.emit('addToTeacher', data);
+                currentTeacher = "Omer";
+                var omerStudent = thissession[currentTeacher];
+                data = {
+                    postToRemove: {
+                        name: omerStudent,
+                    },
+                    teacherName: currentTeacher
+                };
+                client.emit('addToTeacher', data);
             });
             // client.broadcast.emit('addToTeacher', session);
         });
@@ -75,7 +75,7 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
             var text = data.text;
 
             var time = data.time;
-            var post = new Post({name: name, text: text, time : time});
+            var post = new Post({ name: name, text: text, time: time });
 
             post.save();
             // client.emit('render-post', data);
@@ -100,7 +100,7 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
                             client.emit('render-posts-all', posts);
                         });
                     });
-                    CurrentSe.find({}, function(err, session) {
+                    CurrentSe.find({}, function (err, session) {
                         var thissession = session[0];
                         thissession[teacherName] = postToRemove.name;
                         thissession.save();
@@ -114,8 +114,8 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
                     client.broadcast.emit('addToTeacher', data);
                     // console.log(posts);
                 }
-                else if(!isEmpty) {
-                    CurrentSe.find({}, function(err, session) {
+                else if (!isEmpty) {
+                    CurrentSe.find({}, function (err, session) {
                         var thissession = session[0];
                         thissession[teacherName] = "";
                         thissession.save();
@@ -135,19 +135,24 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
     });
 });
 
+
 function initsession() {
     var session = new CurrentSe({
         Brandon: null,
         Hadas: null,
-        Omer: null
+        Omer: null,
+        sessioninited: true
     });
-    session.save();  
+    session.save();
+    sessioninited = true;
 }
 
-initsession();
-
-
-
+CurrentSe.find({}, function (err, session) {
+    var thissession = session[0];
+    if (!thissession) {
+        initsession();
+    }
+});
 
 server.listen(process.env.PORT || '8080', function () {
     console.log('listening on port 8000!!!XD');

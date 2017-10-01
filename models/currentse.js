@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var currentSeSchema = new mongoose.Schema({
     Brandon: String,
     Hadas: String,
-    Omer: String
+    Omer: String,
+    sessionInited: Boolean
 });
 
 var CurrentSe = mongoose.model('Session', currentSeSchema);

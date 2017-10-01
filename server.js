@@ -135,13 +135,13 @@ mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { u
     });
 });
 
-// var session = new CurrentSe({
-//     Brandon: null,
-//     Hadas: null,
-//     Omer: null
-// });
+var session = new CurrentSe({
+    Brandon: null,
+    Hadas: null,
+    Omer: null
+});
 
-// session.save();
+session.save();
 
 server.listen(process.env.PORT || '8080', function () {
     console.log('listening on port 8000!!!XD');

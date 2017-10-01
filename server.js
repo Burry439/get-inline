@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 var Student = require('./models/students.js');
 var Teacher = require('./models/teachers.js');
 var Post = require('./models/post.js');
-var CurrentSe = require('./models/currentse.js')
-    ;
-mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* other options */ }, function () {
+var CurrentSe = require('./models/currentse.js');
+// var mongoconnection =  'mongodb://<olinsoffer>:<tigerXX33>@ds157964.mlab.com:57964/get-inlinedb';
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/beers', { useMongoClient: true,/* other options */ }, function () {
     console.log('DB is on!!!! XD ;)');
     io.on('connection', function (client) {
         Post.find({}, function (err, posts) {
@@ -143,6 +143,6 @@ mongoose.connect('mongodb://localhost/get-inlineDB', { useMongoClient: true,/* o
 
 // session.save();
 
-server.listen(8000, function () {
+server.listen(process.env.PORT || '8080', function () {
     console.log('listening on port 8000!!!XD');
 });

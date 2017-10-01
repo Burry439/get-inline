@@ -16,7 +16,7 @@ var Teacher = require('./models/teachers.js');
 var Post = require('./models/post.js');
 var CurrentSe = require('./models/currentse.js');
 // var mongoconnection =  'mongodb://<olinsoffer>:<tigerXX33>@ds157964.mlab.com:57964/get-inlinedb';
-mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/get-inlineDB', { useMongoClient: true,/* other options */ }, function () {
+mongoose.connect(process.env.MONGODB-URI || 'mongodb://localhost/get-inlineDB', { useMongoClient: true,/* other options */ }, function () {
     console.log('DB is onnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn!!!! XD ;)');
     io.on('connection', function (client) {
         Post.find({}, function (err, posts) {

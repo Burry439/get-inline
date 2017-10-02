@@ -2,9 +2,18 @@ var mongoose = require('mongoose');
 
 
 var currentSeSchema = new mongoose.Schema({
-    Brandon: String,
-    Hadas: String,
-    Omer: String,
+    Brandon: {
+        student: String,
+        avail: Boolean
+    },
+    Hadas: {
+        student: String,
+        avail: Boolean
+    },
+    Omer: {
+        student: String,
+        avail: Boolean
+    },
     sessionInited: Boolean
 });
 

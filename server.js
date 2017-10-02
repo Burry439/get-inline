@@ -255,9 +255,18 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
 
 function initsession() {
     var session = new CurrentSe({
-        Brandon: null,
-        Hadas: null,
-        Omer: null,
+        Brandon: {
+            student: null,
+            avail: true
+        },
+        Hadas: {
+            student: null,
+            avail: true
+        },
+        Omer: {
+            student: null,
+            avail: true
+        },
         sessioninited: true
     });
     session.save();

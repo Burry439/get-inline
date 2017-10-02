@@ -184,7 +184,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     });
                     CurrentSe.find({}, function (err, session) {
                         var thissession = session[0];
-                        thissession[teacherName] = postToRemove.name;
+                        thissession[teacherName].student = postToRemove.name;
                         thissession.save();
                     });
                     var data = {

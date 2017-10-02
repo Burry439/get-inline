@@ -252,34 +252,41 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
     });
 });
 
-
-function initsession() {
-    var session = new CurrentSe({
-        Brandon: {
-            student: null,
-            avail: true
-        },
-        Hadas: {
-            student: null,
-            avail: true
-        },
-        Omer: {
-            student: null,
-            avail: true
-        },
-        sessioninited: true
+function dbSessionInitaition() {
+    function initsession() {
+        var session = new CurrentSe({
+            Brandon: {
+                student: null,
+                avail: true
+            },
+            Hadas: {
+                student: null,
+                avail: true
+            },
+            Omer: {
+                student: null,
+                avail: true
+            },
+            sessioninited: true
+        });
+        session.save();
+        sessioninited = true;
+    }
+    
+    CurrentSe.find({}, function (err, session) {
+        var thissession = session[0];
+        if (!thissession) {
+            initsession();
+            console.log('inited session 11111111111111111');
+        }
+        else {
+            thissession.remove();
+            initsession();
+        }
     });
-    session.save();
-    sessioninited = true;
 }
 
-CurrentSe.find({}, function (err, session) {
-    var thissession = session[0];
-    if (!thissession) {
-        initsession();
-        console.log('inited session 11111111111111111');
-    }
-});
+dbSessionInitaition();
 
 server.listen(process.env.PORT || '8080', function () {
     console.log('listening on port 8000!!!XD');

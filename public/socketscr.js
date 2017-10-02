@@ -43,13 +43,19 @@ $('#gil-btn').on('click', function () {
     $('#_posts').append(newHTML);
     socket.emit('add-post', data);
     // console.log(data.name);
+    if (!$('#_posts').children().length) {
+        $('.btn-circle').css("background-color", 'grey');
+    }
+    else {
+        $('.btn-circle').css("background-color", 'greenyellow');
+    }
 });
 
 $('.next-btn').on('click', function () {
     var teacherName = $(this).data('teacher');
     // console.log(teacherName);
     var data;
-    if ($('#_posts').children().length == 0) {
+    if (!$('#_posts').children().length) {
         data = {
             teacherName: teacherName,
             isEmpty: false
@@ -60,13 +66,30 @@ $('.next-btn').on('click', function () {
             isEmpty: true
         };
     }
-
     socket.emit('next-btn', data);
 });
 
 socket.on('render-after-next', function () {
+    // if (!$('#_posts').children().length) {
+    //     $(this).css("background-color", 'grey');
+    // }
+    // else {
+    //     $(this).css("background-color", 'greenyellow');
+    // }
     $('#_posts').empty();
+    if (!$('#_posts').children().length) {
+        $('.btn-circle').css("background-color", 'grey');
+    }
     nextsound.play();
+});
+
+socket.on('render-next-connect', function () {
+    if (!$('#_posts').children().length) {
+        $('.btn-circle').css("background-color", 'grey');
+    }
+    else {
+        $('.btn-circle').css("background-color", 'greenyellow');
+    }
 });
 
 
@@ -137,20 +160,4 @@ socket.on('pause-play-render', function (data) {
     }
 });
 
-
-
-// $('.next-btn').on('click', function () {
-//     var postsDivL = $('#_posts').children().length;
-//     // console.log(postsDivL + 'lengthtttttttttttttttttttt');
-//     if (postsDivL) {
-//         nextsound.play();
-//     }
-// });
-
-// $('.play-btn').on('click', function () {
-
-// });
-
-// $('.pause-btn').on('click', function () {
-
-// });
+// $('.btn-circle').css("background-color", 'grey');

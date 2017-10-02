@@ -153,6 +153,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 client.broadcast.emit('pause-play-render', data);
             }
         });
+        client.broadcast.emit('render-next-connect');
+        client.emit('render-next-connect');
 
 
         //////////////////////////////////////////////////////////////////////////////////////
@@ -205,7 +207,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 else if (!isEmpty) {
                     CurrentSe.find({}, function (err, session) {
                         var thissession = session[0];
-                        thissession[teacherName] = "";
+                        thissession[teacherName].student = "";
                         thissession.save();
                     });
                     var data2 = {

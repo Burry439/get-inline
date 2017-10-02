@@ -1,8 +1,24 @@
 var socket = io();
-// socket.on('connect', function (data) {
-//     console.log(data + 'dffddf');
-//     // socket.emit('my other event', { my: 'data' });
-// });
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function () {
+        this.sound.play();
+    };
+    this.stop = function () {
+        this.sound.pause();
+    };
+}
+
+var nextsound = new sound('assets/tap-simple.mp3');
+var goOfflineSound = new sound('assets/beep-xylo.mp3');
+var goOnlineSound = new sound('assets/beep-timber.mp3');
+
 
 
 var source = $('#post-template').html();
@@ -26,12 +42,12 @@ $('#gil-btn').on('click', function () {
     var newHTML = template(data);
     $('#_posts').append(newHTML);
     socket.emit('add-post', data);
-    console.log(data.name);
+    // console.log(data.name);
 });
 
 $('.next-btn').on('click', function () {
     var teacherName = $(this).data('teacher');
-    console.log(teacherName);
+    // console.log(teacherName);
     var data;
     if ($('#_posts').children().length == 0) {
         data = {
@@ -50,6 +66,7 @@ $('.next-btn').on('click', function () {
 
 socket.on('render-after-next', function () {
     $('#_posts').empty();
+    nextsound.play();
 });
 
 
@@ -72,7 +89,7 @@ socket.on('addToTeacher', function (data) {
     // }
     var studentToAdd = data.postToRemove.name;
     var teacherName = data.teacherName;
-    console.log(teacherName + 'lllllllllllllllllllll');
+    // console.log(teacherName + 'lllllllllllllllllllll');
     var teacherLaptop = $(".text" + data.teacherName);
     teacherLaptop.empty();
     teacherLaptop.append(studentToAdd);
@@ -98,16 +115,42 @@ $('.pause-btn').on('click', function () {
 
 socket.on('pause-play-render', function (data) {
     var action = data.typeClicked;
-    var thisButton = $("#"+data.teacher + '-btn-' + action);
+    var thisButton = $("#" + data.teacher + '-btn-' + action);
     // console.log(thisButton + "ggggggggggggggggggggggggggggggggggggggggggggggggg");
     if (data.typeClicked === 'play') {
         thisButton.hide();
         thisButton.siblings('.pause-btn').show();
         thisButton.siblings('.next-btn').hide();
+        console.log(data.fromOnConnect);
+        if (!data.fromOnConnect) {
+            goOfflineSound.play();
+        }
     }
-    else if(data.typeClicked === 'pause') {
+    else if (data.typeClicked === 'pause') {
         thisButton.hide();
         thisButton.siblings('.play-btn').show();
         thisButton.siblings('.next-btn').show();
+        console.log(data.fromOnConnect);
+        if (!data.fromOnConnect) {
+            goOnlineSound.play();
+        }
     }
 });
+
+
+
+// $('.next-btn').on('click', function () {
+//     var postsDivL = $('#_posts').children().length;
+//     // console.log(postsDivL + 'lengthtttttttttttttttttttt');
+//     if (postsDivL) {
+//         nextsound.play();
+//     }
+// });
+
+// $('.play-btn').on('click', function () {
+
+// });
+
+// $('.pause-btn').on('click', function () {
+
+// });

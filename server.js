@@ -38,35 +38,35 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 var thissession = sessions[0];
                 currentTeacher = "Brandon";
                 var brandonStudent = thissession[currentTeacher].student;
-                var brandonIsAvail = thissession[currentTeacher].avail;
+                // var brandonIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: brandonStudent,
                     },
                     teacherName: currentTeacher,
-                    isAvail: brandonIsAvail
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
                 currentTeacher = "Hadas";
                 var hadasStudent = thissession[currentTeacher].student;
-                var hadasIsAvail = thissession[currentTeacher].avail;
+                // var hadasIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: hadasStudent,
                     },
                     teacherName: currentTeacher,
-                    isAvail: brandonIsAvail
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
                 currentTeacher = "Omer";
                 var omerStudent = thissession[currentTeacher].student;
-                var omerIsAvail = thissession[currentTeacher].avail;
+                // var omerIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: omerStudent,
                     },
                     teacherName: currentTeacher,
-                    isAvail: brandonIsAvail
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
             });
@@ -82,7 +82,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     teacherName: 'Brandon'
                 };
                 data = {
-                    typeClicked: 'pause',
+                    typeClicked: 'play',
                     teacher: 'Brandon'
                 };
                 client.emit('addToTeacher', data2);
@@ -92,7 +92,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             }
             else {
                 data = {
-                    typeClicked: 'play',
+                    typeClicked: 'pause',
                     teacher: 'Brandon'
                 };
                 client.emit('pause-play-render', data);
@@ -106,7 +106,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     teacherName: 'Omer'
                 };
                 data = {
-                    typeClicked: 'pause',
+                    typeClicked: 'play',
                     teacher: 'Omer'
                 };
                 client.emit('addToTeacher', data2);
@@ -116,7 +116,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             }
             else {
                 data = {
-                    typeClicked: 'play',
+                    typeClicked: 'pause',
                     teacher: 'Omer'
                 };
                 client.emit('pause-play-render', data);
@@ -130,7 +130,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     teacherName: 'Hadas'
                 };
                 data = {
-                    typeClicked: 'pause',
+                    typeClicked: 'play',
                     teacher: 'Hadas'
                 };
                 client.emit('addToTeacher', data2);
@@ -140,14 +140,12 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             }
             else {
                 data = {
-                    typeClicked: 'play',
+                    typeClicked: 'pause',
                     teacher: 'Hadas'
                 };
                 client.emit('pause-play-render', data);
                 client.broadcast.emit('pause-play-render', data);
             }
-            //     thissession[data.teacher] = "";
-            // thissession.save();
         });
 
 
@@ -242,7 +240,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     client.broadcast.emit('addToTeacher', data2);
                     client.emit('pause-play-render', data);
                     client.broadcast.emit('pause-play-render', data);
-                } else {
+                } else if (data.typeClicked === "pause") {
                     thissession[data.teacher].avail = true;
                     thissession.save();
                     client.emit('pause-play-render', data);

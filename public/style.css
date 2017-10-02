@@ -55,7 +55,7 @@ body {
 .textHadas {
     z-index: 1;
     position: absolute;
-    left: 63px;
+    left: 47px;
     top: 240px;
 }
 
@@ -63,7 +63,7 @@ body {
     z-index: 1;
     position: absolute;
     top: 240px;
-    left: 70;
+    left: 49;
     width: 100%;
 }
 @keyframes flash {
@@ -92,6 +92,7 @@ body {
     font-variant: normal;
     font-weight: 500;
     line-height: 26.4px;
+    margin-top: 70px;
 }
 
 .portraits {

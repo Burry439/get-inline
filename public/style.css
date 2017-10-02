@@ -16,21 +16,26 @@ body {
 }
 
 .btn-circle {
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     text-align: center;
-    padding: 6px 0;
+    padding: 3px 0;
     font-size: 16px;
-    line-height: 1.42;
     border-radius: 15px;
     background-color: greenyellow !important;
     border: none;
     position: absolute;
-    top: 290px;
+    top: 533px;
     left: 85px;
     z-index: 1;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
+
+   .btnOmer {
+    color: #557A0E;
+    box-shadow: 0 5px 35px greenyellow (145, 92, 182, .6);
+   }
 
 .teacher-pic {
     width: 300px;

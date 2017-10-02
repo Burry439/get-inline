@@ -37,39 +37,121 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 var currentTeacher, data;
                 var thissession = sessions[0];
                 currentTeacher = "Brandon";
-                var brandonStudent = thissession[currentTeacher];
+                var brandonStudent = thissession[currentTeacher].student;
+                // var brandonIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: brandonStudent,
                     },
-                    teacherName: currentTeacher
+                    teacherName: currentTeacher,
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
                 currentTeacher = "Hadas";
-                var hadasStudent = thissession[currentTeacher];
+                var hadasStudent = thissession[currentTeacher].student;
+                // var hadasIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: hadasStudent,
                     },
-                    teacherName: currentTeacher
+                    teacherName: currentTeacher,
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
                 currentTeacher = "Omer";
-                var omerStudent = thissession[currentTeacher];
+                var omerStudent = thissession[currentTeacher].student;
+                // var omerIsAvail = thissession[currentTeacher].avail;
                 data = {
                     postToRemove: {
                         name: omerStudent,
                     },
-                    teacherName: currentTeacher
+                    teacherName: currentTeacher,
+                    // isAvail: brandonIsAvail
                 };
                 client.emit('addToTeacher', data);
             });
-            // client.broadcast.emit('addToTeacher', session);
         });
-        // client.on('event', function(data){});
-        // client.on('disconnect', function(){});
-        console.log('Hello');
-        // client.broadcast.emit();
+        CurrentSe.find({}, function (err, session) {
+            var data, data2;
+            var thissession = session[0];
+            if (!thissession.Brandon.avail) {
+                data2 = {
+                    postToRemove: {
+                        name: ""
+                    },
+                    teacherName: 'Brandon'
+                };
+                data = {
+                    typeClicked: 'play',
+                    teacher: 'Brandon'
+                };
+                client.emit('addToTeacher', data2);
+                client.broadcast.emit('addToTeacher', data2);
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+            else {
+                data = {
+                    typeClicked: 'pause',
+                    teacher: 'Brandon'
+                };
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+            if (!thissession.Omer.avail) {
+                data2 = {
+                    postToRemove: {
+                        name: ""
+                    },
+                    teacherName: 'Omer'
+                };
+                data = {
+                    typeClicked: 'play',
+                    teacher: 'Omer'
+                };
+                client.emit('addToTeacher', data2);
+                client.broadcast.emit('addToTeacher', data2);
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+            else {
+                data = {
+                    typeClicked: 'pause',
+                    teacher: 'Omer'
+                };
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+            if (!thissession.Hadas.avail) {
+                data2 = {
+                    postToRemove: {
+                        name: ""
+                    },
+                    teacherName: 'Hadas'
+                };
+                data = {
+                    typeClicked: 'play',
+                    teacher: 'Hadas'
+                };
+                client.emit('addToTeacher', data2);
+                client.broadcast.emit('addToTeacher', data2);
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+            else {
+                data = {
+                    typeClicked: 'pause',
+                    teacher: 'Hadas'
+                };
+                client.emit('pause-play-render', data);
+                client.broadcast.emit('pause-play-render', data);
+            }
+        });
+
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+
         client.on("add-post", function (data) {
             var name = data.name;
             var text = data.text;
@@ -131,6 +213,41 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                     client.broadcast.emit('addToTeacher', data2);
                 }
             });
+        });
+        client.on('pause-play', function (data) {
+            // var typeClicked= data.typeClicked;
+            // var thisButton= data.thisButton;
+            // var teacher= data.teacher;
+            // data = {
+            //     typeClicked: typeClicked,
+            //     thisButton: JSON.parse(thisButton),
+            //     teacher: teacher
+            // };
+            // console.log(data.thisButton);
+            CurrentSe.find({}, function (err, session) {
+                var thissession = session[0];
+                if (data.typeClicked === "play") {
+                    thissession[data.teacher] = "";
+                    thissession[data.teacher].avail = false;
+                    thissession.save();
+                    var data2 = {
+                        postToRemove: {
+                            name: ""
+                        },
+                        teacherName: data.teacher
+                    };
+                    client.emit('addToTeacher', data2);
+                    client.broadcast.emit('addToTeacher', data2);
+                    client.emit('pause-play-render', data);
+                    client.broadcast.emit('pause-play-render', data);
+                } else if (data.typeClicked === "pause") {
+                    thissession[data.teacher].avail = true;
+                    thissession.save();
+                    client.emit('pause-play-render', data);
+                    client.broadcast.emit('pause-play-render', data);
+                }
+            });
+
         });
     });
 });

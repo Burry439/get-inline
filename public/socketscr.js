@@ -11,7 +11,7 @@ var template = Handlebars.compile(source);
 
 $('#gil-btn').on('click', function () {
     var dt = new Date();
-    var time = dt.getHours() + ":" + dt.getMinutes()
+    var time = dt.getHours() + ":" + dt.getMinutes();
     var studentName = $('.dropdown-toggle').text();
     var studentText = $('#comment').val();
     var data = {
@@ -76,4 +76,38 @@ socket.on('addToTeacher', function (data) {
     var teacherLaptop = $(".text" + data.teacherName);
     teacherLaptop.empty();
     teacherLaptop.append(studentToAdd);
+});
+
+$('.play-btn').on('click', function () {
+    var teacher = $(this).data('teachername');
+    var data = {
+        typeClicked: 'play',
+        teacher: teacher
+    };
+    socket.emit('pause-play', data);
+});
+
+$('.pause-btn').on('click', function () {
+    var teacher = $(this).data('teachername');
+    var data = {
+        typeClicked: 'pause',
+        teacher: teacher
+    };
+    socket.emit('pause-play', data);
+});
+
+socket.on('pause-play-render', function (data) {
+    var action = data.typeClicked;
+    var thisButton = $("#"+data.teacher + '-btn-' + action);
+    // console.log(thisButton + "ggggggggggggggggggggggggggggggggggggggggggggggggg");
+    if (data.typeClicked === 'play') {
+        thisButton.hide();
+        thisButton.siblings('.pause-btn').show();
+        thisButton.siblings('.next-btn').hide();
+    }
+    else if(data.typeClicked === 'pause') {
+        thisButton.hide();
+        thisButton.siblings('.play-btn').show();
+        thisButton.siblings('.next-btn').show();
+    }
 });

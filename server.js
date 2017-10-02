@@ -83,7 +83,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 };
                 data = {
                     typeClicked: 'play',
-                    teacher: 'Brandon'
+                    teacher: 'Brandon',
+                    fromOnConnect: true
                 };
                 client.emit('addToTeacher', data2);
                 client.broadcast.emit('addToTeacher', data2);
@@ -93,7 +94,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             else {
                 data = {
                     typeClicked: 'pause',
-                    teacher: 'Brandon'
+                    teacher: 'Brandon',
+                    fromOnConnect: true
                 };
                 client.emit('pause-play-render', data);
                 client.broadcast.emit('pause-play-render', data);
@@ -107,7 +109,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 };
                 data = {
                     typeClicked: 'play',
-                    teacher: 'Omer'
+                    teacher: 'Omer',
+                    fromOnConnect: true
                 };
                 client.emit('addToTeacher', data2);
                 client.broadcast.emit('addToTeacher', data2);
@@ -117,7 +120,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             else {
                 data = {
                     typeClicked: 'pause',
-                    teacher: 'Omer'
+                    teacher: 'Omer',
+                    fromOnConnect: true
                 };
                 client.emit('pause-play-render', data);
                 client.broadcast.emit('pause-play-render', data);
@@ -131,7 +135,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
                 };
                 data = {
                     typeClicked: 'play',
-                    teacher: 'Hadas'
+                    teacher: 'Hadas',
+                    fromOnConnect: true
                 };
                 client.emit('addToTeacher', data2);
                 client.broadcast.emit('addToTeacher', data2);
@@ -141,7 +146,8 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             else {
                 data = {
                     typeClicked: 'pause',
-                    teacher: 'Hadas'
+                    teacher: 'Hadas',
+                    fromOnConnect: true
                 };
                 client.emit('pause-play-render', data);
                 client.broadcast.emit('pause-play-render', data);
@@ -224,6 +230,7 @@ mongoose.connect(process.env.MONGOURI || 'mongodb://localhost/get-inlineDB', { u
             //     teacher: teacher
             // };
             // console.log(data.thisButton);
+            data.fromOnConnect = false;
             CurrentSe.find({}, function (err, session) {
                 var thissession = session[0];
                 if (data.typeClicked === "play") {
@@ -289,5 +296,5 @@ function dbSessionInitaition() {
 dbSessionInitaition();
 
 server.listen(process.env.PORT || '8080', function () {
-    console.log('listening on port 8000!!!XD');
+    console.log('listening on port 8080!!!XD');
 });
